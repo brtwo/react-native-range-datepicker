@@ -138,10 +138,10 @@ const RangeDatepicker = (props) => {
 				props.showClose || props.showReset ?
 					(<View style={{ flexDirection: 'row', justifyContent: "space-between", padding: 20, paddingBottom: 10}}>
 						{
-							props.showClose && <Text style={{fontSize: 20}} onPress={props.onClose}>Close</Text>
+							props.showClose && <Text style={{fontSize: 20}} onPress={props.onClose}>{props.closeButtonText || 'Close'}</Text>
 						}
 						{
-							props.showReset && <Text style={{fontSize: 20}} onPress={onReset}>Reset</Text>
+							props.showReset && <Text style={{fontSize: 20}} onPress={onReset}>{props.resetButtonText || 'Reset'}</Text>
 						}
 					</View>)
 					:
@@ -200,7 +200,7 @@ const RangeDatepicker = (props) => {
 				(
 				<View style={[styles.buttonWrapper, props.buttonContainerStyle]}>
 					<Button
-						title="Select Date" 
+						title={props.buttonText || 'Select Date'} 
 						onPress={handleConfirmDate}
 						color={props.buttonColor} />
 				</View>
