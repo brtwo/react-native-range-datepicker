@@ -5,12 +5,16 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import utc from "dayjs/plugin/utc";
 import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
 import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
+import "dayjs/locale/pt";
+
 dayjs.extend(customParseFormat);
 dayjs.extend(relativeTime);
 dayjs.extend(advancedFormat);
 dayjs.extend(utc);
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
+
+dayjs.locale("pt");
 
 const dayJsMod = (date, format, strict) => {
   if (!date || typeof date === "undefined") {
